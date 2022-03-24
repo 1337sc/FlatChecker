@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <ul ngbNav [(activeId)]="activeId">
+            <li [ngbNavItem]="0">
+                <a ngbNavLink class="btn btn-light" [ngClass]="{'btn-primary': activeId == 0}"
+                    [routerLink]="'/'">Flatchecker</a>
+            </li>
+            <div class="d-flex position-absolute end-0">
+                <li [ngbNavItem]="1" class="d-flex">
+                    <a ngbNavLink class="btn" [ngClass]="{'btn-primary': activeId == 1}" [routerLink]="'/login'">Log
+                        in</a>
+                </li>
+                <li [ngbNavItem]="2" class="d-flex">
+                    <a ngbNavLink class="btn" [ngClass]="{'btn-primary': activeId == 2}"
+                        [routerLink]="'cabinet'">Cabinet</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
