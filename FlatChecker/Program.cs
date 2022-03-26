@@ -89,15 +89,13 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseStaticFiles(); 
-
 if (app.Environment.IsDevelopment())
 {
     //app.UseSwagger();
     //app.UseSwaggerUI();
     app.UseSpa(spa =>
     {
-        spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+        spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
     });
 }
 
